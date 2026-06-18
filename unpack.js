@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-const htmlPath = path.join(__dirname, 'MarketingX-download.html');
+const htmlPath = path.join(__dirname, 'index.html');
 const outputDir = path.join(__dirname, 'unpacked');
 
 if (!fs.existsSync(outputDir)) {

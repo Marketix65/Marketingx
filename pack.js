@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const htmlPath = path.join(__dirname, 'MarketingX-download.html');
+const htmlPath = path.join(__dirname, 'index.html');
 const templatePath = path.join(__dirname, 'unpacked', 'template.html');
 
 if (!fs.existsSync(templatePath)) {
@@ -15,7 +15,7 @@ const originalHtml = fs.readFileSync(htmlPath, 'utf8');
 const target = '<script type="__bundler/template">';
 const idx = originalHtml.indexOf(target);
 if (idx === -1) {
-  console.error('Template tag not found in MarketingX-download.html');
+  console.error('Template tag not found in index.html');
   process.exit(1);
 }
 
@@ -33,4 +33,4 @@ const newHtml = header + newTemplateJson + '\n  </script>\n</body>\n</html>';
 
 // Write it back
 fs.writeFileSync(htmlPath, newHtml, 'utf8');
-console.log('Successfully repacked MarketingX-download.html!');
+console.log('Successfully repacked index.html!');
